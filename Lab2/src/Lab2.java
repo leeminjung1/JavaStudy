@@ -1,86 +1,76 @@
-/*
-	JavaProgramming1
-	class 1
-	32172988 ÀÌ¹ÎÁ¤
-	
-	Lab2
-	2021.03.19
- */
-
-
 public class Lab2 {
 	
 	
 	/*
-	 * 1. ÀÌ½½Á¡À» °è»êÇØÁÖ´Â ¸Ş¼Òµå Á¤ÀÇ
-	 * ¿Âµµ(t)¿Í ½Àµµ(rh)¸¦ ÆÄ¶ó¹ÌÅÍ·Î ¹Ş¾Æ ÀÌ½½Á¡(DewPointTemperature)À» °è»êÇÏ¿© ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå
+	 * 1. ì´ìŠ¬ì ì„ ê³„ì‚°í•´ì£¼ëŠ” ë©”ì†Œë“œ ì •ì˜
+	 * ì˜¨ë„(t)ì™€ ìŠµë„(rh)ë¥¼ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì•„ ì´ìŠ¬ì (DewPointTemperature)ì„ ê³„ì‚°í•˜ì—¬ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	 */
 	
 	public static double calculateDewPointTemperature(double t, double rh) {
 		double result;
 
 		result = ( 243.12 * (Math.log(rh/100) + (17.62 * t) / (243.12 + t)))
-					/(17.62 - (Math.log(rh/100) + (17.62 * t) / (243.12 + t)));	// Dew Point¸¦ °è»êÇÏ´Â ½Ä ÀÛ¼º
+					/(17.62 - (Math.log(rh/100) + (17.62 * t) / (243.12 + t)));	// Dew Pointë¥¼ ê³„ì‚°í•˜ëŠ” ì‹ ì‘ì„±
 		
-		return Math.round(result);												// °á°ú¸¦ ¼Ò¼öÁ¡ Ã¹Â° ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²ÇÏµµ·Ï Math classÀÇ roundÇÔ¼ö¸¦ »ç¿ë
+		return Math.round(result);												// ê²°ê³¼ë¥¼ ì†Œìˆ˜ì  ì²«ì§¸ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•˜ë„ë¡ Math classì˜ roundí•¨ìˆ˜ë¥¼ ì‚¬ìš©
 		
 	}
 	
 	
-	/* 2. Ã¼°¨¿Âµµ¸¦ °è»êÇØÁÖ´Â ¸Ş¼Òµå Á¤ÀÇ
-	 * ¿Âµµ(t)¿Í Ç³¼Ó(v)¸¦ ÆÄ¶ó¹ÌÅÍ·Î ¹Ş¾Æ Ã¼°¨¿Âµµ(WindChillTemperatrue)À» °è»êÇÏ¿© ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå
+	/* 2. ì²´ê°ì˜¨ë„ë¥¼ ê³„ì‚°í•´ì£¼ëŠ” ë©”ì†Œë“œ ì •ì˜
+	 * ì˜¨ë„(t)ì™€ í’ì†(v)ë¥¼ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì•„ ì²´ê°ì˜¨ë„(WindChillTemperatrue)ì„ ê³„ì‚°í•˜ì—¬ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	 */
 	
 	public static double calculateWindChillTemperature(double t, double v) {
 		double result;
 
-		result = 35.74 + 0.6215*t - 35.75*Math.pow(v, 0.16) + 0.4275*t*Math.pow(v, 0.16);	// Ã¼°¨¿Âµµ¸¦ °è»êÇÏ´Â ½Ä ÀÛ¼º
-																							// Math.pow(¹Ø,Áö¼ö) ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© Áö¼öÇ¥Çö
-		return Math.round(result);															// °á°ú¸¦ ¼Ò¼öÁ¡ Ã¹Â° ÀÚ¸®¿¡¼­ ¹İ¿Ã¸²ÇÏµµ·Ï Math classÀÇ roundÇÔ¼ö¸¦ »ç¿ë
+		result = 35.74 + 0.6215*t - 35.75*Math.pow(v, 0.16) + 0.4275*t*Math.pow(v, 0.16);	// ì²´ê°ì˜¨ë„ë¥¼ ê³„ì‚°í•˜ëŠ” ì‹ ì‘ì„±
+																							// Math.pow(ë°‘,ì§€ìˆ˜) í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ì§€ìˆ˜í‘œí˜„
+		return Math.round(result);															// ê²°ê³¼ë¥¼ ì†Œìˆ˜ì  ì²«ì§¸ ìë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•˜ë„ë¡ Math classì˜ roundí•¨ìˆ˜ë¥¼ ì‚¬ìš©
 		
 	}
 	
 	
-	/* 3. ÀÌ½½Á¡ Å×ÀÌºíÀ» Ãâ·ÂÇØÁÖ´Â ¸Ş¼Òµå Á¤ÀÇ
-	 * ¿Âµµ(t)¹è¿­°ú ½Àµµ(rh)¹è¿­À» ÆÄ¶ó¹ÌÅÍ·Î ¹Ş¾Æ µÎ ¹è¿­ÀÇ °¡´ÉÇÑ Á¶ÇÕÀ» ¸ğµÎ °è»êÇÏ¿© Ç¥¿Í °°Àº ÇüÅÂ·Î Ãâ·ÂÇØÁÖ´Â ¸Ş¼Òµå
-	 * ±Û¾¾ Å©±â, ÀÎÄÚµù¹æ¹ı µî¿¡ µû¶ó ÀÇµµ¿Í ´Ù¸£°Ô ³ªÅ¸³¯¼öÀÖÀ½..
+	/* 3. ì´ìŠ¬ì  í…Œì´ë¸”ì„ ì¶œë ¥í•´ì£¼ëŠ” ë©”ì†Œë“œ ì •ì˜
+	 * ì˜¨ë„(t)ë°°ì—´ê³¼ ìŠµë„(rh)ë°°ì—´ì„ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì•„ ë‘ ë°°ì—´ì˜ ê°€ëŠ¥í•œ ì¡°í•©ì„ ëª¨ë‘ ê³„ì‚°í•˜ì—¬ í‘œì™€ ê°™ì€ í˜•íƒœë¡œ ì¶œë ¥í•´ì£¼ëŠ” ë©”ì†Œë“œ
+	 * ê¸€ì”¨ í¬ê¸°, ì¸ì½”ë”©ë°©ë²• ë“±ì— ë”°ë¼ ì˜ë„ì™€ ë‹¤ë¥´ê²Œ ë‚˜íƒ€ë‚ ìˆ˜ìˆìŒ..
 	 */
 	
 	public static void printDewPointTemperature(int[] t, int[] rh) {
 				
 		System.out.print("Relative Humidity|");
         for (int i=0; i<rh.length; i++)
-            System.out.print(rh[i] + "\t");													// Ã¹¹øÂ° ¿­¿¡ ÁÖ¾îÁø »ó´ë½Àµµ µ¥ÀÌÅÍ Ãâ·Â
-        System.out.println("\n    Air Temp ¡É\t |-------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.print(rh[i] + "\t");													// ì²«ë²ˆì§¸ ì—´ì— ì£¼ì–´ì§„ ìƒëŒ€ìŠµë„ ë°ì´í„° ì¶œë ¥
+        System.out.println("\n    Air Temp â„ƒ\t |-------------------------------------------------------------------------------------------------------------------------------------------------");
 		
-		for(int i=0; i<t.length; i++) {														// ¸ğµç t¹è¿­ Å½»ö			
-			System.out.print("\t" + t[i] + "\t |");											// °¢ Çà Ã¹¹øÂ°¿¡ ÁÖ¾îÁø ¿Âµµ µ¥ÀÌÅÍ Ãâ·Â
-			for(int j=0; j<rh.length; j++, System.out.print("\t")) {						// ¸ğµç rh¹è¿­ Å½»ö
-				if(calculateDewPointTemperature(t[i],rh[j])>=0) {							// ÀÌ½½Á¡ table¿¡¼­ À½¼ö´Â ³ª¿ÀÁö ¾Ê±â ¶§¹®¿¡ ¾ç¼öÀÏ¶§¸¸
-					System.out.print((int)calculateDewPointTemperature(t[i],rh[j]));		// calculateDewPointTemperature¸Ş¼Òµå¸¦ »ç¿ëÇÏ¿© ±× °á°ú¸¦ Á¤¼ö·Î º¯È¯ÇÏ¿© Ãâ·Â
+		for(int i=0; i<t.length; i++) {														// ëª¨ë“  të°°ì—´ íƒìƒ‰			
+			System.out.print("\t" + t[i] + "\t |");											// ê° í–‰ ì²«ë²ˆì§¸ì— ì£¼ì–´ì§„ ì˜¨ë„ ë°ì´í„° ì¶œë ¥
+			for(int j=0; j<rh.length; j++, System.out.print("\t")) {						// ëª¨ë“  rhë°°ì—´ íƒìƒ‰
+				if(calculateDewPointTemperature(t[i],rh[j])>=0) {							// ì´ìŠ¬ì  tableì—ì„œ ìŒìˆ˜ëŠ” ë‚˜ì˜¤ì§€ ì•Šê¸° ë•Œë¬¸ì— ì–‘ìˆ˜ì¼ë•Œë§Œ
+					System.out.print((int)calculateDewPointTemperature(t[i],rh[j]));		// calculateDewPointTemperatureë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ê·¸ ê²°ê³¼ë¥¼ ì •ìˆ˜ë¡œ ë³€í™˜í•˜ì—¬ ì¶œë ¥
 				}
-				else System.out.print("    ");												// À½¼öÀÏ¶§´Â °ø¹é Ãâ·Â
+				else System.out.print("    ");												// ìŒìˆ˜ì¼ë•ŒëŠ” ê³µë°± ì¶œë ¥
 			}
 			System.out.println();
 		}
 		
 	}
 	
-	/* 4. Ã¼°¨¿Âµµ Å×ÀÌºíÀ» Ãâ·ÂÇØÁÖ´Â ¸Ş¼Òµå Á¤ÀÇ
-	 * ¿Âµµ(t)¹è¿­°ú Ç³¼Ó(v)¹è¿­À» ÆÄ¶ó¹ÌÅÍ·Î ¹Ş¾Æ µÎ ¹è¿­ÀÇ °¡´ÉÇÑ Á¶ÇÕÀ» ¸ğµÎ °è»êÇÏ¿© Ç¥¿Í °°Àº ÇüÅÂ·Î Ãâ·ÂÇØÁÖ´Â ¸Ş¼Òµå
+	/* 4. ì²´ê°ì˜¨ë„ í…Œì´ë¸”ì„ ì¶œë ¥í•´ì£¼ëŠ” ë©”ì†Œë“œ ì •ì˜
+	 * ì˜¨ë„(t)ë°°ì—´ê³¼ í’ì†(v)ë°°ì—´ì„ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì•„ ë‘ ë°°ì—´ì˜ ê°€ëŠ¥í•œ ì¡°í•©ì„ ëª¨ë‘ ê³„ì‚°í•˜ì—¬ í‘œì™€ ê°™ì€ í˜•íƒœë¡œ ì¶œë ¥í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	 */
 	
 	public static void printWindChillTemperature(int[] t, int[] v) {
 		
-		System.out.print("   Air Temp ¢µ \t|");
-        for (int i=0; i<t.length; i++)												// Ã¹¹øÂ° ¿­¿¡ ÁÖ¾îÁø ¿Âµµ µ¥ÀÌÅÍ Ãâ·Â
+		System.out.print("   Air Temp â„‰ \t|");
+        for (int i=0; i<t.length; i++)												// ì²«ë²ˆì§¸ ì—´ì— ì£¼ì–´ì§„ ì˜¨ë„ ë°ì´í„° ì¶œë ¥
             System.out.print(t[i] + "\t");
         System.out.println("\n   Wind (mph) \t|---------------------------------------------------------------------------------------------------------------------------------------------");
 				
-		for(int i=0; i<v.length; i++) {												// ¸ğµç v¹è¿­ Å½»ö
-			System.out.print("\t" + v[i] + "\t|");									// °¢ Çà Ã¹¹øÂ°¿¡ ÁÖ¾îÁø Ç³¼Óµ¥ÀÌÅÍ Ãâ·Â
-			for(int j=0; j<t.length; j++, System.out.print("\t")) {					// ¸ğµç t¹è¿­ Å½»ö
-				System.out.print((int)calculateWindChillTemperature(t[j], v[i]));	// calculateWindChillTemperature¸Ş¼Òµå¸¦ »ç¿ëÇÏ¿© ±× °á°ú¸¦ Á¤¼ö·Î º¯È¯ÇÏ¿© Ãâ·Â
+		for(int i=0; i<v.length; i++) {												// ëª¨ë“  vë°°ì—´ íƒìƒ‰
+			System.out.print("\t" + v[i] + "\t|");									// ê° í–‰ ì²«ë²ˆì§¸ì— ì£¼ì–´ì§„ í’ì†ë°ì´í„° ì¶œë ¥
+			for(int j=0; j<t.length; j++, System.out.print("\t")) {					// ëª¨ë“  të°°ì—´ íƒìƒ‰
+				System.out.print((int)calculateWindChillTemperature(t[j], v[i]));	// calculateWindChillTemperatureë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ê·¸ ê²°ê³¼ë¥¼ ì •ìˆ˜ë¡œ ë³€í™˜í•˜ì—¬ ì¶œë ¥
 			}
 			System.out.println();
 		}
@@ -93,50 +83,50 @@ public class Lab2 {
 	public static void main(String[] args) {
 		
 		/*
-		 * 5. main ¸Ş¼Òµå¿¡¼­ µ¥ÀÌÅÍ¸¦ ³Ö°í, ¹è¿­À» Ãâ·ÂÇÏ´Â ºÎºĞ
+		 * 5. main ë©”ì†Œë“œì—ì„œ ë°ì´í„°ë¥¼ ë„£ê³ , ë°°ì—´ì„ ì¶œë ¥í•˜ëŠ” ë¶€ë¶„
 		 */
 		
-		// 5-1. ÀÌ½½Á¡ °è»ê¿¡ ÇÊ¿äÇÑ ¿Âµµ(t) µ¥ÀÌÅÍ »ı¼º
-		int[] t1 = new int[17];											// intÇü ¹è¿­ t1 ¼±¾ğÈÄ Å©±â 17ÀÇ ¹è¿­ »ı¼º
+		// 5-1. ì´ìŠ¬ì  ê³„ì‚°ì— í•„ìš”í•œ ì˜¨ë„(t) ë°ì´í„° ìƒì„±
+		int[] t1 = new int[17];											// intí˜• ë°°ì—´ t1 ì„ ì–¸í›„ í¬ê¸° 17ì˜ ë°°ì—´ ìƒì„±
 		
-		for(int i=0; i<t1.length-1; i++) {								// ÁÖ¾îÁø ÀÌ½½Á¡ tableÀÇ ¿ÂµµÁ¶°ÇÀ» ÀÏÀÏÀÌ ´ëÀÔÇÏÁö ¾Ê°í ±ÔÄ¢À» Ã£¾Æ ´ëÀÔ 
-			t1[i] = (int) Math.round((110 - (double)i*5 - 32)*5/9);		// Fahrenheit ¿Âµµ·Î´Â 110ºÎÅÍ 5¾¿ÀÛ¾ÆÁö´Â ±ÔÄ¢À» ÀÌ¿ëÇÏ¿© Celsius·Î ¹Ù²Ş
-																		// ¸¶Áö¸· °ªÀº Celsius ¿Âµµ·Î 0µµ ÀÌ±â ¶§¹®¿¡ µû·Î ´ëÀÔÇÏÁö ¾ÊÀ½	
+		for(int i=0; i<t1.length-1; i++) {								// ì£¼ì–´ì§„ ì´ìŠ¬ì  tableì˜ ì˜¨ë„ì¡°ê±´ì„ ì¼ì¼ì´ ëŒ€ì…í•˜ì§€ ì•Šê³  ê·œì¹™ì„ ì°¾ì•„ ëŒ€ì… 
+			t1[i] = (int) Math.round((110 - (double)i*5 - 32)*5/9);		// Fahrenheit ì˜¨ë„ë¡œëŠ” 110ë¶€í„° 5ì”©ì‘ì•„ì§€ëŠ” ê·œì¹™ì„ ì´ìš©í•˜ì—¬ Celsiusë¡œ ë°”ê¿ˆ
+																		// ë§ˆì§€ë§‰ ê°’ì€ Celsius ì˜¨ë„ë¡œ 0ë„ ì´ê¸° ë•Œë¬¸ì— ë”°ë¡œ ëŒ€ì…í•˜ì§€ ì•ŠìŒ	
 		}
-		// 5-1. ÀÌ½½Á¡ °è»ê¿¡ ÇÊ¿äÇÑ ¿Âµµ µ¥ÀÌÅÍ ¹è¿­À» Ãâ·Â
-		System.out.println("This is Temperature(¡É) Array to calcuate Dew Point Temperature");
+		// 5-1. ì´ìŠ¬ì  ê³„ì‚°ì— í•„ìš”í•œ ì˜¨ë„ ë°ì´í„° ë°°ì—´ì„ ì¶œë ¥
+		System.out.println("This is Temperature(â„ƒ) Array to calcuate Dew Point Temperature");
 		for(int i : t1) {
-			System.out.print(i + " ");		// foreach¹®À» »ç¿ëÇÏ¿© ¹è¿­ t1ÀÇ °ª Ãâ·Â
+			System.out.print(i + " ");		// foreachë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ t1ì˜ ê°’ ì¶œë ¥
 		}
 		System.out.println();
 		
 		
 		
-		// 5-2. ÀÌ½½Á¡ °è»ê¿¡ ÇÊ¿äÇÑ »ó´ë½Àµµ(rh) µ¥ÀÌÅÍ »ı¼º
-		int[] rh = new int[19];				// intÇü ¹è¿­ rh ¼±¾ğÈÄ Å©±â 19ÀÇ ¹è¿­ »ı¼º
-		for(int i=0; i<rh.length; i++) {	// ÁÖ¾îÁø ÀÌ½½Á¡ table¿¡ ¸Â°Ô 100%¿¡¼­ 5¾¿ ÀÛ¾ÆÁö´Â ±ÔÄ¢Ã£¾Æ ´ëÀÔ
+		// 5-2. ì´ìŠ¬ì  ê³„ì‚°ì— í•„ìš”í•œ ìƒëŒ€ìŠµë„(rh) ë°ì´í„° ìƒì„±
+		int[] rh = new int[19];				// intí˜• ë°°ì—´ rh ì„ ì–¸í›„ í¬ê¸° 19ì˜ ë°°ì—´ ìƒì„±
+		for(int i=0; i<rh.length; i++) {	// ì£¼ì–´ì§„ ì´ìŠ¬ì  tableì— ë§ê²Œ 100%ì—ì„œ 5ì”© ì‘ì•„ì§€ëŠ” ê·œì¹™ì°¾ì•„ ëŒ€ì…
 			rh[i] = 100 - i*5;
 		}
-		// 5-2. ÀÌ½½Á¡ °è»ê¿¡ ÇÊ¿äÇÑ »ó´ë½Àµµ µ¥ÀÌÅÍ ¹è¿­À» Ãâ·Â
+		// 5-2. ì´ìŠ¬ì  ê³„ì‚°ì— í•„ìš”í•œ ìƒëŒ€ìŠµë„ ë°ì´í„° ë°°ì—´ì„ ì¶œë ¥
 		System.out.println();
 		System.out.println("This is Relative Humidity(%) Array to calcuate Dew Point Temperature");
 		for(int i=0; i<rh.length; i++) {
-			System.out.print(rh[i] +" ");	// for¹®À» »ç¿ëÇÏ¿© ¹è¿­ rhÀÇ °ª Ãâ·Â
+			System.out.print(rh[i] +" ");	// forë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ rhì˜ ê°’ ì¶œë ¥
 		}
 		System.out.println();
 		
 		
 		
-		// 5-3. Ã¼°¨¿Âµµ °è»ê¿¡ ÇÊ¿äÇÑ Ç³¼Ó(v) µ¥ÀÌÅÍ »ı¼º
-		int[] v = new int[12];			// intÇü ¹è¿­ v ¼±¾ğÈÄ Å©±â 12ÀÇ ¹è¿­ »ı¼º
+		// 5-3. ì²´ê°ì˜¨ë„ ê³„ì‚°ì— í•„ìš”í•œ í’ì†(v) ë°ì´í„° ìƒì„±
+		int[] v = new int[12];			// intí˜• ë°°ì—´ v ì„ ì–¸í›„ í¬ê¸° 12ì˜ ë°°ì—´ ìƒì„±
 		for(int i=0; i<v.length; i++) {
-			v[i] = 5*(i+1);				// ÁÖ¾îÁø Ã¼°¨¿Âµµ table¿¡ ¸Â°Ô 5mph¿¡¼­ 5¾¿ Ä¿Áö´Â ±ÔÄ¢Ã£¾Æ ´ëÀÔ
+			v[i] = 5*(i+1);				// ì£¼ì–´ì§„ ì²´ê°ì˜¨ë„ tableì— ë§ê²Œ 5mphì—ì„œ 5ì”© ì»¤ì§€ëŠ” ê·œì¹™ì°¾ì•„ ëŒ€ì…
 		}
-		// 5-3. Ã¼°¨¿Âµµ °è»ê¿¡ ÇÊ¿äÇÑ Ç³¼Ó µ¥ÀÌÅÍ ¹è¿­À» Ãâ·Â
+		// 5-3. ì²´ê°ì˜¨ë„ ê³„ì‚°ì— í•„ìš”í•œ í’ì† ë°ì´í„° ë°°ì—´ì„ ì¶œë ¥
 		System.out.println();
 		System.out.println("This is Wind Speed(mph) Array to calcuate Wind Chill Temperature");
 		int j = 0;
-		while(j<v.length) {					// while¹®À» ÀÌ¿ëÇÏ¿© ¹è¿­ vÀÇ °ª Ãâ·Â
+		while(j<v.length) {					// whileë¬¸ì„ ì´ìš©í•˜ì—¬ ë°°ì—´ vì˜ ê°’ ì¶œë ¥
 			System.out.print(v[j] +" ");
 			j++;
 		}
@@ -144,16 +134,16 @@ public class Lab2 {
 		
 		
 		
-		// 5-4. Ã¼°¨¿Âµµ °è»ê¿¡ ÇÊ¿äÇÑ ¿Âµµ(t) µ¥ÀÌÅÍ »ı¼º
-		int[] t2 = new int[18];				// intÇü ¹è¿­ t2 ¼±¾ğÈÄ Å©±â 18ÀÇ ¹è¿­ »ı¼º
+		// 5-4. ì²´ê°ì˜¨ë„ ê³„ì‚°ì— í•„ìš”í•œ ì˜¨ë„(t) ë°ì´í„° ìƒì„±
+		int[] t2 = new int[18];				// intí˜• ë°°ì—´ t2 ì„ ì–¸í›„ í¬ê¸° 18ì˜ ë°°ì—´ ìƒì„±
 		for(int i=0; i<t2.length; i++) {
-			t2[i] = 40 - i*5;				// ÁÖ¾îÁø Ã¼°¨¿Âµµ table¿¡ ¸Â°Ô 40¿¡¼­ 5¾¿ ÀÛ¾ÆÁö´Â ±ÔÄ¢Ã£¾Æ ´ëÀÔ
+			t2[i] = 40 - i*5;				// ì£¼ì–´ì§„ ì²´ê°ì˜¨ë„ tableì— ë§ê²Œ 40ì—ì„œ 5ì”© ì‘ì•„ì§€ëŠ” ê·œì¹™ì°¾ì•„ ëŒ€ì…
 		}
-		// 5-4. Ã¼°¨¿Âµµ °è»ê¿¡ ÇÊ¿äÇÑ ¿Âµµ µ¥ÀÌÅÍ ¹è¿­À» Ãâ·Â
+		// 5-4. ì²´ê°ì˜¨ë„ ê³„ì‚°ì— í•„ìš”í•œ ì˜¨ë„ ë°ì´í„° ë°°ì—´ì„ ì¶œë ¥
 		System.out.println();
-		System.out.println("This is Temperature(¢µ) Array to calcuate Wind Chill Temperature");
+		System.out.println("This is Temperature(â„‰) Array to calcuate Wind Chill Temperature");
 		int k = 0;
-		do {								// do-while¹®À» ÀÌ¿ëÇÏ¿© ¹è¿­ t2 Ãâ·Â
+		do {								// do-whileë¬¸ì„ ì´ìš©í•˜ì—¬ ë°°ì—´ t2 ì¶œë ¥
 			System.out.print(t2[k] +" ");	
 			k++;
 		} while(k<t2.length);
@@ -165,12 +155,12 @@ public class Lab2 {
 		/*
 		 * My code
 		 * 
-		 * Switch¹®À» »ç¿ëÇÏ¿© ¼ıÀÚ¸¦ ÀÔ·Â¹Ş¾Æ ¿øÇÏ´Â ¹è¿­À» º¸¿©ÁÖµµ·Ï ÀÛ¼º
+		 * Switchë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ìˆ«ìë¥¼ ì…ë ¥ë°›ì•„ ì›í•˜ëŠ” ë°°ì—´ì„ ë³´ì—¬ì£¼ë„ë¡ ì‘ì„±
 		 * 
 		 */
-		System.out.println("ÀÌ½½Á¡ °è»ê¿¡ »ç¿ëµÇ´Â µ¥ÀÌÅÍ¼ÂÀ» º¸·Á¸é 1, Ã¼°¨¿Âµµ °è»ê¿¡ »ç¿ëµÇ´Â µ¥ÀÌÅÍ¼ÂÀ» º¸·Á¸é 2, º¸Áö¾ÊÀ¸·Á¸é 0À» ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ì´ìŠ¬ì  ê³„ì‚°ì— ì‚¬ìš©ë˜ëŠ” ë°ì´í„°ì…‹ì„ ë³´ë ¤ë©´ 1, ì²´ê°ì˜¨ë„ ê³„ì‚°ì— ì‚¬ìš©ë˜ëŠ” ë°ì´í„°ì…‹ì„ ë³´ë ¤ë©´ 2, ë³´ì§€ì•Šìœ¼ë ¤ë©´ 0ì„ ì…ë ¥í•˜ì„¸ìš”");
 		
-		int num = UserInput.getIntegerBetween(0,2);	// UserInput classÀÇ getIntegerBetween ¸Ş¼Òµå¸¦ »ç¿ëÇÏ¿© °ªÀ» 0°ú 2»çÀÌÀÇ Á¤¼ö¸¸ ¹Şµµ·Ï ¼³Á¤
+		int num = UserInput.getIntegerBetween(0,2);	// UserInput classì˜ getIntegerBetween ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ê°’ì„ 0ê³¼ 2ì‚¬ì´ì˜ ì •ìˆ˜ë§Œ ë°›ë„ë¡ ì„¤ì •
 		
 		switch (num) {
 		case 0:
@@ -178,24 +168,24 @@ public class Lab2 {
 		case 1:
 			System.out.print("t : ");
 			for(int i : t1) {
-				System.out.print(i + " ");		// foreach¹®À» »ç¿ëÇÏ¿© ¹è¿­ t1 Ãâ·Â
+				System.out.print(i + " ");		// foreachë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ t1 ì¶œë ¥
 			}
 			System.out.println();
 			System.out.print("rh : ");
 			for(int i : rh) {
-				System.out.print(i + " ");		// foreach¹®À» »ç¿ëÇÏ¿© ¹è¿­ rh Ãâ·Â
+				System.out.print(i + " ");		// foreachë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ rh ì¶œë ¥
 			}
 			System.out.println();
 			break;
 		case 2:
 			System.out.print("t : ");
 			for(int i : t2) {
-				System.out.print(i + " ");		// foreach¹®À» »ç¿ëÇÏ¿© ¹è¿­ t2 Ãâ·Â
+				System.out.print(i + " ");		// foreachë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ t2 ì¶œë ¥
 			}
 			System.out.println();
 			System.out.print("v : ");
 			for(int i : v) {
-				System.out.print(i + " ");		// foreach¹®À» »ç¿ëÇÏ¿© ¹è¿­ v Ãâ·Â
+				System.out.print(i + " ");		// foreachë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ë°°ì—´ v ì¶œë ¥
 			}
 			System.out.println();
 			break;
@@ -205,19 +195,19 @@ public class Lab2 {
 		
 		
 		/*
-		 *  6. do-while¹®À» ÀÌ¿ëÇÏ¿© »ç¿ëÀÚ°¡ enter-key´©¸£¸é °è¼Ó, q-key ´©¸£¸é Á¾·áÇÏµµ·Ï ±¸Çö
-		 *  	»ç¿ëÀÚ·ÎºÎÅÍ 1 ¶Ç´Â 2¸¦ ¼±ÅÃÇÏ¿© ÀÌ½½Á¡ ¶Ç´Â Ã¼°¨¿Âµµ °è»ê
+		 *  6. do-whileë¬¸ì„ ì´ìš©í•˜ì—¬ ì‚¬ìš©ìê°€ enter-keyëˆ„ë¥´ë©´ ê³„ì†, q-key ëˆ„ë¥´ë©´ ì¢…ë£Œí•˜ë„ë¡ êµ¬í˜„
+		 *  	ì‚¬ìš©ìë¡œë¶€í„° 1 ë˜ëŠ” 2ë¥¼ ì„ íƒí•˜ì—¬ ì´ìŠ¬ì  ë˜ëŠ” ì²´ê°ì˜¨ë„ ê³„ì‚°
 		 */
 	
 		do {
-			if(UserInput.getExitKey()) System.exit(0);	// UserInput classÀÇ getExitKey ¸Ş¼Òµå¸¦ ½ÇÇàÇÏ¿© trueÀÌ¸é ÇÁ·Î±×·¥ Á¾·á
+			if(UserInput.getExitKey()) System.exit(0);	// UserInput classì˜ getExitKey ë©”ì†Œë“œë¥¼ ì‹¤í–‰í•˜ì—¬ trueì´ë©´ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 									
-			if(UserInput.getIntegerBetween(1,2) == 1)	// UserInput classÀÇ getIntegerBetween ¸Ş¼Òµå¸¦ ½ÇÇàÇÏ¿© arguments·Î 1°ú 2¸¦ ³Ö¾îÁÖ°í 1ÀÌ¸é
-				printDewPointTemperature(t1,rh);		// printDewPointTemperature¸Ş¼Òµå ½ÇÇà. arguments·Î t1¹è¿­°ú rh¹è¿­À» ÁÜ
-			else										// UserInput classÀÇ getIntegerBetween ¸Ş¼Òµå¸¦ ½ÇÇàÇÏ¿© arguments·Î 1°ú 2¸¦ ³Ö¾îÁÖ°í 1ÀÌ ¾Æ´Ï¸é(2ÀÌ¸é)
-				printWindChillTemperature(t2,v);		// printWindChillTemperature¸Ş¼Òµå ½ÇÇà. arguments·Î t2¹è¿­°ú v¹è¿­À» ÁÜ
+			if(UserInput.getIntegerBetween(1,2) == 1)	// UserInput classì˜ getIntegerBetween ë©”ì†Œë“œë¥¼ ì‹¤í–‰í•˜ì—¬ argumentsë¡œ 1ê³¼ 2ë¥¼ ë„£ì–´ì£¼ê³  1ì´ë©´
+				printDewPointTemperature(t1,rh);		// printDewPointTemperatureë©”ì†Œë“œ ì‹¤í–‰. argumentsë¡œ t1ë°°ì—´ê³¼ rhë°°ì—´ì„ ì¤Œ
+			else										// UserInput classì˜ getIntegerBetween ë©”ì†Œë“œë¥¼ ì‹¤í–‰í•˜ì—¬ argumentsë¡œ 1ê³¼ 2ë¥¼ ë„£ì–´ì£¼ê³  1ì´ ì•„ë‹ˆë©´(2ì´ë©´)
+				printWindChillTemperature(t2,v);		// printWindChillTemperatureë©”ì†Œë“œ ì‹¤í–‰. argumentsë¡œ t2ë°°ì—´ê³¼ vë°°ì—´ì„ ì¤Œ
 						
-		} while(true);									// ¹«ÇÑ ¹İº¹
+		} while(true);									// ë¬´í•œ ë°˜ë³µ
 		
 		
 	}
